@@ -1,0 +1,38 @@
+$ node --test tests/app.test.mjs
+✔ Homepage is HTML and identifies the assessment (23.438073ms)
+✔ Health and readiness succeed (6.244151ms)
+✔ Instance identity is available (3.240541ms)
+✔ CPU test rejects unauthenticated and wrong-token requests (5.717785ms)
+✔ Authorized CPU test completes (18.401264ms)
+✔ Unknown paths and unsupported methods fail explicitly (3.486623ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.401545
+
+
+$ bash -n /workspace/scratch/67dd49f3cee3/tam-doks-demo/scripts/deploy.sh
+
+
+$ bash -n /workspace/scratch/67dd49f3cee3/tam-doks-demo/scripts/collect-evidence.sh
+
+
+pdb.yaml: YAML parsed
+
+namespace.yaml: YAML parsed
+
+deployment.yaml: YAML parsed
+
+service.yaml: YAML parsed
+
+hpa.yaml: YAML parsed
+
+Static configuration checks passed. Kubernetes API validation not run.
+
+Local HTTP smoke completed with zero failed requests. See local-smoke.json.
+
+NOT RUN: Docker build, registry push, Kubernetes API validation, live DOKS deployment, HPA scaling, external LB test, cloud recovery and GitHub publication.

@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: tam-demo
+  namespace: tam-demo
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: tam-demo

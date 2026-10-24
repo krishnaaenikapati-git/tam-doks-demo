@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+kubeconfig*
+*.pem
+*.key
+__pycache__/
+evidence/cloud-*/
+evidence/local-*/

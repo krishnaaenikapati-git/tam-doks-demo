@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-23T22:13:09.720535+00:00",
+  "url": "http://127.0.0.1:18080/work",
+  "requested_duration_seconds": 3,
+  "elapsed_seconds": 3.01,
+  "concurrency": 2,
+  "requests": 387,
+  "successful_requests": 387,
+  "failed_requests": 0,
+  "requests_per_second": 128.63,
+  "successful_requests_per_second": 128.63,
+  "p50_ms": 14.97,
+  "p95_ms": 18.64,
+  "p99_ms": 20.17,
+  "latency_sample_count": 387,
+  "status_counts": {
+    "200": 387
+  },
+  "measurement_note": "Client round trip, new HTTP connection per request. Percentiles include errors. Not a production SLO measurement.",
+  "environment": "Local authoring runtime, Node.js 24.19.0, loopback. Not Docker or DigitalOcean."
+}

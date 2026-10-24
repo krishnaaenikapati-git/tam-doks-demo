@@ -1,0 +1,7 @@
+.git
+node_modules
+evidence
+docs
+tests
+scripts
+*.zip

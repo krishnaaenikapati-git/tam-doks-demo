@@ -1,0 +1,1 @@
+{"name":"tam-doks-demo","version":"1.0.0","private":true,"description":"DigitalOcean TAM assessment demonstration","engines":{"node":">=22"},"scripts":{"start":"node app/server.mjs","test":"node --test tests/*.test.mjs"}}

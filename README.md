@@ -4,7 +4,7 @@ Prepared for Krishna Aenikapati. This repository contains a small Node.js web ap
 
 ## Current completion status
 
-Application endpoint tests and a short local HTTP test were executed successfully in the authoring environment. Docker is not installed there, so the image build was not executed. No DigitalOcean resources were created. DOKS deployment, external load balancing, HPA behavior, node recovery and cloud performance remain unverified. GitHub publication requires a new dedicated repository. The local measurements are not cloud performance results.
+Application endpoint tests and a short local HTTP test were executed successfully in the authoring environment. Docker is not installed there, so the image build was not executed. No DigitalOcean resources were created. DOKS deployment, external load balancing, HPA behavior, node recovery and cloud performance remain unverified. The project is published in the private repository https://github.com/krishnaaenikapati-git/tam-doks-demo. The PDF preserves the original preparation status; live cloud validation remains pending. The local measurements are not cloud performance results.
 
 ## Project map
 

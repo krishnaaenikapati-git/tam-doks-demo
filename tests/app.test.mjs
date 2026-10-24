@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createApp} from '../app/server.mjs';
+let app,base;
+test.before(async()=>{app=createApp({testToken:'test-only-token'});await new Promise(r=>app.listen(0,'127.0.0.1',r));base=`http://127.0.0.1:${app.address().port}`;});
+test.after(()=>new Promise(r=>app.close(r)));
+test('Homepage is HTML and identifies the assessment',async()=>{let r=await fetch(base);assert.equal(r.status,200);assert.match(await r.text(),/TAM Scaling Demo/);});
+test('Health and readiness succeed',async()=>{for(let p of ['/healthz','/readyz']){let r=await fetch(base+p);assert.equal(r.status,200);assert.equal((await r.json()).status,'ok');}});
+test('Instance identity is available',async()=>{let r=await fetch(base+'/api/info');assert.ok((await r.json()).pod);});
+test('CPU test rejects unauthenticated and wrong-token requests',async()=>{assert.equal((await fetch(base+'/work')).status,403);assert.equal((await fetch(base+'/work',{headers:{'X-Load-Test-Token':'wrong'}})).status,403);});
+test('Authorized CPU test completes',async()=>{let r=await fetch(base+'/work',{headers:{'X-Load-Test-Token':'test-only-token'}});assert.equal(r.status,200);assert.equal((await r.json()).status,'completed');});
+test('Unknown paths and unsupported methods fail explicitly',async()=>{assert.equal((await fetch(base+'/missing')).status,404);assert.equal((await fetch(base,{method:'POST'})).status,405);});
