@@ -1,6 +1,6 @@
 # DigitalOcean TAM assessment
 
-Prepared for Krishna Aenikapati. This repository contains a small Node.js web application, Docker packaging, Kubernetes manifests, deployment and test scripts, a customer setup guide, and a QBR draft.
+This repository contains a small Node.js web application, Docker packaging, Kubernetes manifests, deployment and test scripts, a customer setup guide, and a QBR draft.
 
 ## Current completion status
 
